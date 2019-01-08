@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "157851373513",
+    "firebase_url": "https://fir-35414.firebaseio.com",
+    "project_id": "fir-35414",
+    "storage_bucket": "fir-35414.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157851373513:android:0a8a31b128d04c77",
+        "android_client_info": {
+          "package_name": "com.bacon.expo.googlesignin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157851373513-mj1d6fddp29k29tn2uiedpke4vhcth13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYIgC8-LfDmmZQecIXOgBuJ3w2pkx25Dg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
