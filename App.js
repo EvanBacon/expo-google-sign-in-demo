@@ -1,8 +1,8 @@
 import { AppAuth } from 'expo-app-auth';
-import { GoogleSignIn } from 'expo-google-sign-in';
 import * as Constants from 'expo-constants';
+import { GoogleSignIn } from 'expo-google-sign-in';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View, Platform } from 'react-native';
 
 import GoogleSignInButton from './GoogleSignInButton';
 
@@ -12,9 +12,27 @@ const isInClient = Constants.appOwnership === 'expo';
 if (isInClient) {
   GoogleSignIn.allowInClient();
 }
+
+const clientIdForUseInTheExpoClient =
+  '603386649315-vp4revvrcgrcjme51ebuhbkbspl048l9.apps.googleusercontent.com';
+
+/*
+ * Redefine this one with your client ID
+ *
+ * The iOS value is the one that really matters,
+ * on Android this does nothing because the client ID
+ * is read from the google-services.json.
+ */
+const yourClientIdForUseInStandalone = Platform.select({
+  android:
+    '157851373513-mj1d6fddp29k29tn2uiedpke4vhcth13.apps.googleusercontent.com',
+  ios:
+    '157851373513-bip0o55padtj29hvs1ro22cqoopd5449.apps.googleusercontent.com',
+});
+
 const clientId = isInClient
-  ? '603386649315-vp4revvrcgrcjme51ebuhbkbspl048l9.apps.googleusercontent.com'
-  : '157851373513-bip0o55padtj29hvs1ro22cqoopd5449.apps.googleusercontent.com';
+  ? clientIdForUseInTheExpoClient
+  : yourClientIdForUseInStandalone;
 
 export default class App extends React.Component {
   state = { user: null };
